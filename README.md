@@ -4,7 +4,6 @@
 ## Introduction
 This repository serves as my learning journal for the book "Terraform Cookbook" by Mikael Krief.
 
-## Day 1
 Today, I delved into Infrastructure as Code (IaC), a fundamental practice in the DevOps culture.
 
 ### Chapter 1: Setting Up the Terraform Environment
