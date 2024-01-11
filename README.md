@@ -1,23 +1,46 @@
-# Terraformcookbook
-This is my learning Journal of  Book Terraform cookbook by Armon Dadgar
 
-#Day 1
-Infrastructure as Code, more commonly known as IaC, is a practice that is a pillar of DevOps culture. 
+# Terraform Cookbook Journal
 
-Started reading chapter 1
-Chapter 1, Setting Up the Terraform Environment, details the different ways of installing Terraform
-manually, with scripts, or by using a Docker container, and it also details the Terraform migration
-configuration process.
+## Introduction
+This repository serves as my learning journal for the book "Terraform Cookbook" by Mikael Krief.
 
-I learnt about the jq tool that is used to perform queries on any json content which is useful in shell scripts
+## Day 1
+Today, I delved into Infrastructure as Code (IaC), a fundamental practice in the DevOps culture.
 
-I used gitpod and wrote a Dockerfile and successfully installed the terraform in it as mentioned on the page 21 of the book.
+### Chapter 1: Setting Up the Terraform Environment
+I started by reading Chapter 1, which focuses on setting up the Terraform environment. The chapter covers various installation methods, including manual installation, using scripts, or leveraging a Docker container. Additionally, it outlines the Terraform migration configuration process.
 
-I learned about the different versions of terraform and how to use it
+Key Takeaways:
+- Explored the jq tool for querying JSON content in shell scripts.
+- Utilized gitpod to create a Dockerfile and successfully installed Terraform following the instructions on page 21.
+- Gained insights into different Terraform versions and their usage.
+- Emphasized the importance of the .terraform.lock.hcl file for managing provider versions consistently across workstations or CI/CD pipelines.
 
-The main concept in this recipe is the .terraform.lock.hcl file, also called the dependency
-file, that contains all the information about the provider versions. It allows you to have the same
-provider versions on all workstations or CI/CD pipelines that apply this Terraform configuration.
+### Chapter 2
+In this chapter, I deepened my understanding of Terraform concepts:
 
-#chapter 2
+1. **Configuring Terraform and Provider Versions:**
+   - Explored configuring Terraform and specifying provider versions.
 
+2. **Adding Provider Aliases:**
+   - Learned how to add aliases to providers to work with multiple instances of the same provider.
+
+3. **Variable Manipulation:**
+   - Explored the manipulation of variables for flexibility.
+   - Variables declared in .tf files, accessed as `var.name`.
+   - Values set in terraform.tfvars.
+
+4. **Securing Variables:**
+   - Declared sensitive variables in the .tf file.
+    >variable "api_key" {
+     description = "Custom application API key"
+     sensitive   = true
+   }
+  
+   - Stored values in terraform.tfvars:
+   > api_key = "xxxxxxxxxxxxxxxxx"
+   - Discussed potential security issues when using source control and introduced the use of Terraform's environment variable technique.
+
+5. **Local Variables:**
+   - Differentiated local variables from Terraform variables.
+   - Highlighted that local variables cannot be redefined in Terraform variables files, environment variables, or with the `-var` CLI argument.
